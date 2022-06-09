@@ -42,6 +42,10 @@ body {
   // padding: 0 7vw;
 }
 
+.container.no-snap {
+  scroll-snap-type: y proximity;
+}
+
 section {
   scroll-snap-align: start;
   padding: 10rem 7vw;
@@ -98,6 +102,18 @@ button.btn {
   text-transform: uppercase;
   color: white;
   position: relative;
+}
+
+.arrow {
+  position: absolute;
+  top: 5rem;
+  left: 7vw;
+  z-index: 1;
+
+  a {
+    color: $color-green;
+    font-size: 2rem;
+  }
 }
 
 .color {
@@ -170,6 +186,8 @@ button.btn {
   }
 }
 
+////// Section general //////
+
 section.project {
   height: 100vh;
   display: flex;
@@ -227,7 +245,7 @@ section.project {
     }
 
     h3 {
-      margin-bottom: 3rem;
+      margin: 3rem 0;
       position: relative;
 
       @media only screen and (max-width: $bp-medium) {
@@ -320,6 +338,8 @@ section.project {
   }
 }
 
+////// Project 1 //////
+
 .project_1 {
   .text-area {
     .project-desc {
@@ -356,6 +376,8 @@ section.project {
     }
   }
 }
+
+////// Project 2 //////
 
 .project_2 {
   .text-area {
@@ -394,6 +416,8 @@ section.project {
   }
 }
 
+////// Project 3 //////
+
 .project_3 {
   .text-area {
     .project-desc {
@@ -430,6 +454,8 @@ section.project {
     }
   }
 }
+
+////// Contact //////
 
 section.project.contact {
   @media only screen and (max-width: $bp-large) {
@@ -505,6 +531,76 @@ section.project.contact {
 
     @media only screen and (max-width: $bp-medium) {
       margin-bottom: 3rem;
+    }
+  }
+}
+
+////// Project 2 page //////
+
+section.project.project_2.project_2-page {
+  height: auto;
+  display: block;
+  @media only screen and (max-width: $bp-medium) {
+    padding-bottom: 0;
+  }
+  .text-area {
+    width: 100%;
+    margin-bottom: 10rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      margin-bottom: 5rem;
+    }
+
+    .project-nr {
+      @media only screen and (max-width: $bp-large) {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    .project-type {
+      @media only screen and (max-width: $bp-large) {
+        position: relative;
+        bottom: 0;
+      }
+    }
+    .project-desc {
+      h3 {
+        color: $color-green;
+        span {
+          background: $color-green;
+        }
+      }
+      p {
+        span {
+          background: $color-green;
+        }
+      }
+      ul {
+        span {
+          background: $color-green;
+        }
+      }
+
+      button.btn {
+        background: $color-green;
+      }
+    }
+  }
+
+  .showcase {
+    .img-wrap {
+      img:not(:last-child) {
+        margin-bottom: 10rem;
+        @media only screen and (max-width: $bp-medium) {
+          margin-bottom: 5rem;
+        }
+      }
+      .overlay {
+        span {
+          background: $color-green;
+        }
+      }
     }
   }
 }

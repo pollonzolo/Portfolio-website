@@ -43,18 +43,18 @@ let tl5 = gsap.timeline({
 });
 
 tl.to("section.header .colored__red", {
-  duration: 0.4,
-  top: -1500,
+  duration: 0.3,
+  yPercent: -101,
   ease: "power.inOut",
 })
   .to("section.header .colored__green", {
-    duration: 0.4,
-    top: -1500,
+    duration: 0.3,
+    yPercent: -101,
     ease: "power.inOut",
   })
   .to("section.header .colored__yellow", {
-    duration: 0.4,
-    top: -1500,
+    duration: 0.3,
+    yPercent: -101,
     ease: "power.inOut",
   })
   .from("section.header h1 span", {
@@ -69,13 +69,13 @@ tl1.from("section.about h3", { duration: 1, opacity: 0 });
 
 tl2
   .to("section.project_1 .text-area .project-desc h3 span", {
-    left: -800,
+    xPercent: -101,
     ease: "power",
   })
   .to(
     "section.project_1 .text-area .project-desc p span",
     {
-      left: -1000,
+      xPercent: -101,
       ease: "power1",
     },
     "<+0.1"
@@ -83,7 +83,7 @@ tl2
   .to(
     "section.project_1 .text-area .project-desc ul span",
     {
-      left: -1000,
+      xPercent: -101,
       ease: "power1",
     },
     "<+0.1"
@@ -91,7 +91,7 @@ tl2
   .to(
     "section.project_1 .showcase .img-wrap .overlay span",
     {
-      left: -1000,
+      xPercent: -201,
       ease: "power1",
     },
     "<"
@@ -108,26 +108,26 @@ tl2
 
 tl3
   .to("section.project_2 .text-area .project-desc h3 span", {
-    left: -1000,
+    xPercent: -101,
   })
   .to(
     "section.project_2 .text-area .project-desc p span",
     {
-      left: -1000,
+      xPercent: -101,
     },
     "<+0.1"
   )
   .to(
     "section.project_2 .text-area .project-desc ul span",
     {
-      left: -1000,
+      xPercent: -101,
     },
     "<+0.1"
   )
   .to(
     "section.project_2 .showcase .img-wrap .overlay span",
     {
-      left: -1000,
+      xPercent: -201,
     },
     "<"
   )
@@ -143,26 +143,26 @@ tl3
 
 tl4
   .to("section.project_3 .text-area .project-desc h3 span", {
-    left: -1000,
+    xPercent: -101,
   })
   .to(
     "section.project_3 .text-area .project-desc p span",
     {
-      left: -1000,
+      xPercent: -101,
     },
     "<+0.1"
   )
   .to(
     "section.project_3 .text-area .project-desc ul span",
     {
-      left: -1000,
+      xPercent: -101,
     },
     "<+0.1"
   )
   .to(
     "section.project_3 .showcase .img-wrap .overlay span",
     {
-      left: -1000,
+      xPercent: -201,
     },
     "<"
   )
@@ -178,33 +178,33 @@ tl4
 
 tl5
   .to("section.contact .text-area .project-desc h3 span", {
-    left: -1000,
+    xPercent: -101,
   })
   .to(
     "section.contact .contact-links ul span",
     {
-      left: -1000,
+      xPercent: -101,
     },
     "<+0.2"
   );
 //   .to(
 //     "section.contact .text-area .project-desc p span",
 //     {
-//       left: -1000,
+//       xPercent: -101,
 //     },
 //     "<+0.1"
 //   )
 //   .to(
 //     "section.contact .text-area .project-desc ul span",
 //     {
-//       left: -1000,
+//       xPercent: -101,
 //     },
 //     "<+0.1"
 //   )
 //   .to(
 //     "section.contact .showcase .img-wrap .overlay span",
 //     {
-//       left: -1000,
+//       xPercent: -101,
 //     },
 //     "<"
 //   );
@@ -225,15 +225,23 @@ const btn3 = document.querySelector(
 
 const icons = document.querySelectorAll(".contact-links ul li a i");
 
-let hover = gsap.to(btn1, { scale: 1.03, duration: 0.2, paused: true });
-btn1.addEventListener("mouseenter", () => hover.play());
-btn1.addEventListener("mouseleave", () => hover.reverse());
-let hover2 = gsap.to(btn2, { scale: 1.03, duration: 0.2, paused: true });
-btn2.addEventListener("mouseenter", () => hover2.play());
-btn2.addEventListener("mouseleave", () => hover2.reverse());
-let hover3 = gsap.to(btn3, { scale: 1.03, duration: 0.2, paused: true });
-btn3.addEventListener("mouseenter", () => hover3.play());
-btn3.addEventListener("mouseleave", () => hover3.reverse());
+if (btn1 != null) {
+  let hover = gsap.to(btn1, { scale: 1.03, duration: 0.2, paused: true });
+  btn1.addEventListener("mouseenter", () => hover.play());
+  btn1.addEventListener("mouseleave", () => hover.reverse());
+}
+
+if (btn2 != null) {
+  let hover2 = gsap.to(btn2, { scale: 1.03, duration: 0.2, paused: true });
+  btn2.addEventListener("mouseenter", () => hover2.play());
+  btn2.addEventListener("mouseleave", () => hover2.reverse());
+}
+
+if (btn3 != null) {
+  let hover3 = gsap.to(btn3, { scale: 1.03, duration: 0.2, paused: true });
+  btn3.addEventListener("mouseenter", () => hover3.play());
+  btn3.addEventListener("mouseleave", () => hover3.reverse());
+}
 
 gsap.utils.toArray(icons).forEach((icon) => {
   let hover4 = gsap.to(icon, { scale: 1.03, duration: 0.2, paused: true });
