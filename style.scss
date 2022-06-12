@@ -49,6 +49,14 @@ body {
 section {
   scroll-snap-align: start;
   padding: 10rem 7vw;
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 4rem 7vw;
+  }
+
+  @media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    padding: 0.5rem 7vw;
+  }
 }
 
 body {
@@ -65,7 +73,7 @@ body {
 h1 {
   font-size: 10rem;
 
-  @media only screen and (max-width: $bp-medium) {
+  @media only screen and (max-width: $bp-large) {
     font-size: 5rem;
   }
 }
@@ -73,7 +81,7 @@ h1 {
 h3 {
   font-size: 7rem;
 
-  @media only screen and (max-width: $bp-medium) {
+  @media only screen and (max-width: $bp-large) {
     font-size: 2rem;
   }
 }
@@ -193,8 +201,9 @@ section.project {
   display: flex;
   position: relative;
   // overflow: hidden;
+  align-items: center;
 
-  @media only screen and (max-width: $bp-large) {
+  @media only screen and (max-width: $bp-small) {
     flex-direction: column-reverse;
     justify-content: center;
   }
@@ -216,17 +225,21 @@ section.project {
       font-size: 3rem;
       font-weight: 700;
       text-transform: uppercase;
+
+      @media only screen and (max-height: 575.98px) and (orientation: landscape) {
+        display: none;
+      }
     }
 
     .project-nr {
-      @media only screen and (max-width: $bp-large) {
+      @media only screen and (max-width: $bp-medium) {
         position: absolute;
         top: 6rem;
       }
     }
 
     .project-type {
-      @media only screen and (max-width: $bp-large) {
+      @media only screen and (max-width: $bp-medium) {
         position: absolute;
         bottom: 6rem;
       }
@@ -238,6 +251,10 @@ section.project {
     flex-direction: column;
     justify-content: center;
 
+    @media only screen and (max-height: 575.98px) and (orientation: landscape) {
+      margin-right: 1rem;
+    }
+
     h3,
     p,
     ul.languages {
@@ -248,9 +265,9 @@ section.project {
       margin: 3rem 0;
       position: relative;
 
-      @media only screen and (max-width: $bp-medium) {
+      @media only screen and (max-width: $bp-large) {
         font-size: 5rem;
-        margin-bottom: 1.5rem;
+        margin: 0 0 1.5rem 0;
       }
     }
 
@@ -283,6 +300,9 @@ section.project {
         margin-bottom: 3rem;
         color: $color-white;
         cursor: pointer;
+        @media only screen and (max-width: $bp-large) {
+          margin: 0;
+        }
       }
     }
 
@@ -309,6 +329,9 @@ section.project {
   @media only screen and (max-width: $bp-large) {
     flex: inherit;
     height: auto;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
     margin-bottom: 3rem;
   }
 
@@ -460,6 +483,7 @@ section.project {
 section.project.contact {
   @media only screen and (max-width: $bp-large) {
     flex-direction: column;
+    justify-content: center;
   }
 
   .text-area {
@@ -468,7 +492,7 @@ section.project.contact {
         margin-bottom: 4rem;
         color: $color-black-light;
 
-        @media only screen and (max-width: $bp-medium) {
+        @media only screen and (max-width: $bp-large) {
           margin-bottom: 1.5rem;
         }
 
@@ -529,7 +553,7 @@ section.project.contact {
       margin-right: 6rem;
     }
 
-    @media only screen and (max-width: $bp-medium) {
+    @media only screen and (max-width: $bp-large) {
       margin-bottom: 3rem;
     }
   }
@@ -540,14 +564,15 @@ section.project.contact {
 section.project.project_2.project_2-page {
   height: auto;
   display: block;
-  @media only screen and (max-width: $bp-medium) {
+  @media only screen and (max-width: $bp-large) {
+    padding-top: 10rem;
     padding-bottom: 0;
   }
   .text-area {
     width: 100%;
     margin-bottom: 10rem;
 
-    @media only screen and (max-width: $bp-medium) {
+    @media only screen and (max-width: $bp-large) {
       margin-bottom: 5rem;
     }
 
@@ -592,7 +617,7 @@ section.project.project_2.project_2-page {
     .img-wrap {
       img:not(:last-child) {
         margin-bottom: 10rem;
-        @media only screen and (max-width: $bp-medium) {
+        @media only screen and (max-width: $bp-large) {
           margin-bottom: 5rem;
         }
       }
